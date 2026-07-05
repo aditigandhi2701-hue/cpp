@@ -51,3 +51,19 @@ public:
         reverseArray(arr, left + 1, right - 1);
     }
 };
+class Solution {
+public:
+    bool isPalindrome(string &s, int left, int right) {
+
+        // Base case
+        if (left >= right)
+            return true;
+
+        // Characters don't match
+        if (s[left] != s[right])
+            return false;
+
+        // Recursive call
+        return isPalindrome(s, left + 1, right - 1);
+    }
+};
