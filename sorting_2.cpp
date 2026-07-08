@@ -83,3 +83,30 @@ public:
         return nums;
     }
 };
+class Solution {
+public:
+    void insertionSort(vector<int>& nums, int n) {
+        // Base case
+        if (n <= 1)
+            return;
+
+        // Sort first n-1 elements
+        insertionSort(nums, n - 1);
+
+        // Insert nth element into sorted array
+        int last = nums[n - 1];
+        int j = n - 2;
+
+        while (j >= 0 && nums[j] > last) {
+            nums[j + 1] = nums[j];
+            j--;
+        }
+
+        nums[j + 1] = last;
+    }
+
+    vector<int> recursiveInsertionSort(vector<int>& nums) {
+        insertionSort(nums, nums.size());
+        return nums;
+    }
+};
