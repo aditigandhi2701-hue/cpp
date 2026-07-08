@@ -60,3 +60,26 @@ public:
         return nums;
     }
 };
+class Solution {
+public:
+    void bubbleSort(vector<int>& nums, int n) {
+        // Base case
+        if (n == 1)
+            return;
+
+        // One pass of Bubble Sort
+        for (int i = 0; i < n - 1; i++) {
+            if (nums[i] > nums[i + 1]) {
+                swap(nums[i], nums[i + 1]);
+            }
+        }
+
+        // Recursive call for remaining array
+        bubbleSort(nums, n - 1);
+    }
+
+    vector<int> recursiveBubbleSort(vector<int>& nums) {
+        bubbleSort(nums, nums.size());
+        return nums;
+    }
+};
