@@ -24,3 +24,14 @@ for (int i = 0; i < nums.size(); i++) {
         secondLargest = nums[i];
     }
 }
+class Solution {
+public:
+    int linearSearch(vector<int>& nums, int target) {
+        for (int i = 0; i < nums.size(); i++) {
+            if (nums[i] == target) {
+                return i;      // Target found
+            }
+        }
+        return -1;             // Target not found
+    }
+};
